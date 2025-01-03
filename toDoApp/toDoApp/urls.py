@@ -15,8 +15,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import include, path
-from toDoApp.views import ToDoTasksView, about, index
+from django.urls import path
+from toDoApp.views import about, index, ToDoTasksView
 
 admin.site.site_header = "ToDo Application Admin"
 admin.site.site_title = "ToDo Application Admin Portal"
