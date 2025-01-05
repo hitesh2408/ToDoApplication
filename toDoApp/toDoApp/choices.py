@@ -1,11 +1,12 @@
 """File to store all the choices for To Do Application."""
 
+from django.db import models
 
-class TaskStatus:
+class TaskStatus(models.TextChoices):
     """Class to define all the choices."""
 
-    NOT_STARTED = 0
-    IN_PROGRESS = 1
-    UNDER_REVIEW = 2
-    COMPLETED = 3
-    DEFERRED = 4
+    NOT_STARTED = 'NA'
+    IN_PROGRESS = 'IP'
+    UNDER_REVIEW = 'UR'
+    COMPLETED = 'CP'
+    DEFERRED = 'DF'
