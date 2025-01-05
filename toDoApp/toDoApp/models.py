@@ -10,8 +10,13 @@ from toDoApp.choices import TaskStatus
 
 class Task(models.Model):
     """Model for each task in the app."""
-    uuid = uuid.UUID()
+
+    uuid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=100, null=False, blank=False)
     description = models.TextField()
-    status = models.Choices(TaskStatus)
+    status = models.CharField(
+        max_length=2,
+        choices=TaskStatus,
+        default=TaskStatus.NOT_STARTED
+    )
     user = User()
