@@ -9,3 +9,12 @@ class UtilityChoices(models.TextChoices):
     DAILY_USE = "DU"
     MATHEMATICAL = "MT"
     FILE_HANDLING = "FH"
+
+
+class UtilityStatus(models.TextChoices):
+    """Class for Utility status."""
+
+    UNDER_DEVELOPMENT = "UD"
+    ACTIVE = "AC"
+    INACTIVE = "IA"
+    DEFERRED = "DF"

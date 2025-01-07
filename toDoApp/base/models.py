@@ -5,7 +5,7 @@ import uuid
 from django.contrib.auth.models import User
 from django.db import models
 
-from base.choices import UtilityChoices
+from base.choices import UtilityChoices, UtilityStatus
 
 class AuditModel(models.Model):
     """Fields for audit purpose."""
@@ -32,4 +32,9 @@ class Utilities(AuditModel):
         max_length=2,
         choices=UtilityChoices,
         default=UtilityChoices.NOT_APPLICABLE
+    )
+    utility_status = models.CharField(
+        max_length=2,
+        choices=UtilityStatus,
+        default=UtilityStatus.UNDER_DEVELOPMENT
     )
