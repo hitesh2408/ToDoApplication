@@ -25,7 +25,7 @@ class AuditModel(models.Model):
 
 class Utilities(AuditModel):
     """Model for all the Utilities."""
-    uuid = models.UUIDField(primary_key=True, default=uuid.UUID, editable=False)
+    uuid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     utility_name = models.CharField(max_length=50)
     utility_description = models.TextField()
     type = models.CharField(
@@ -38,3 +38,7 @@ class Utilities(AuditModel):
         choices=UtilityStatus,
         default=UtilityStatus.UNDER_DEVELOPMENT
     )
+
+    def __str__(self):
+        """Return string representation for the model."""
+        return f"Utility: {self.utility_name} | {self.utility_status}"
