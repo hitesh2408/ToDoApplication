@@ -22,3 +22,7 @@ class Task(AuditModel):
         default=TaskStatus.NOT_STARTED
     )
     user = User()
+
+    def __str__(self):
+        """Return string representation for the model."""
+        return f"Task: '{self.name}'"
