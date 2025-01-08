@@ -39,9 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'toDoApp',
-    'calculations',
-    'file_handling',
-    'base',
+    'calculations.apps.CalculationsConfig',
+    'file_handling.apps.FileHandlingConfig',
+    'base.apps.BaseConfig',
 ]
 
 MIDDLEWARE = [
