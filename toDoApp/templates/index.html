@@ -4,4 +4,35 @@
 
 {% block body %}
 
+<div class="container my-5">
+
+  <div class="row">
+  {% for utility in utlities %}
+
+      {% if forloop.counter|divisibleby:2 %}
+        <div class="col-sm-6">
+      {% else %}
+        <div class="col-sm-6 mb-3 mb-sm-0">
+      {% endif %}
+          <div class="card my-2">
+            <div class="card-body">
+              <h5 class="card-title">{{utility.utility_name}}</h5>
+              <p class="card-text">{{utility.utility_description}}</p>
+              <a href="{{utility.utility_path}}" class="btn btn-primary">Explore "{{utility.utility_name}}"</a>
+            </div>
+          </div>
+          
+        </div>
+
+      {% if forloop.counter|divisibleby:2 %}
+        </div>
+        <div class="row">
+      {% endif %}
+
+  {% empty %}
+    <h2 class="card-title"> No utilities found </h2>
+  {% endfor %}
+
+</div>
+
 {% endblock body %}
