@@ -38,6 +38,8 @@ class Utilities(AuditModel):
         choices=UtilityStatus,
         default=UtilityStatus.UNDER_DEVELOPMENT
     )
+    utility_path = models.CharField(max_length=100, null=True, blank=True)
+
 
     def __str__(self):
         """Return string representation for the model."""
