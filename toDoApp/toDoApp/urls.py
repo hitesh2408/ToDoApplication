@@ -24,7 +24,7 @@ admin.site.index_title = "Welcome to Utilities Application Portal"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('all-tasks/', ToDoTasksView.as_view()),
+    path('all_tasks/', ToDoTasksView.as_view()),
     path('', index),
     path('about/', about),
 ]

@@ -17,7 +17,7 @@ class UtilityHandler:
         utilities = Utilities.objects.filter(
             #utility_status=UtilityStatus.ACTIVE
         ).values(
-            'utility_name', 'utility_description', 'type', 'utility_status'
+            'utility_name', 'utility_description', 'type', 'utility_status', 'utility_path'
         )
 
         return utilities
