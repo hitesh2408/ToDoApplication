@@ -22,9 +22,12 @@ admin.site.site_header = "Utilities Application Admin"
 admin.site.site_title = "Utilities Application Admin Portal"
 admin.site.index_title = "Welcome to Utilities Application Portal"
 
+handler404 = 'base.views.custom_404_view'
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('all_tasks/', ToDoTasksView.as_view()),
     path('', index),
     path('about/', about),
+    path('base/', include('base.urls'))
 ]
